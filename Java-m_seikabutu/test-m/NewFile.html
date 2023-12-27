@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>結果の可視化</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <style>
+        .originalFileBtn {
+            border: 3px solid;
+            display: inline-block;
+            padding: 5px 1em;
+            position: relative;
+            color: #FFF;
+            background: #fd9535;
+            /*背景色*/
+            border: solid 2px #fd9535;
+            border-bottom: solid 2px #d27d00;
+            /*少し濃い目の色に*/
+            border-radius: 4px;
+            /*角の丸み*/
+            box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+            font-weight: bold;
+        }
+
+        .originalFileBtn input[type="file"] {
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .originalFileBtn:active {
+            border-bottom: solid 2px #fd9535;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #ff5500;
+        }
+
+
+        .chart-row {
+            border-bottom: 1px solid #f4f4f4;
+            padding: 20px 0;
+        }
+
+        canvas {
+
+            background-color: #ffffff;
+        }
+
+        .result-list {
+            border: 1px solid #f4f4f4;
+            background-color: #ffffff;
+        }
+
+        .result-list li {
+            border-bottom: 1px solid #f4f4f4;
+        }
+
+        .result-list li:hover {
+            background-color: #ff9500;
+            color: #ffffff;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .chart-row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        canvas {
+            width: 50%;
+            height: 400px;
+            max-width: 400px;
+        }
+
+        .result-list {
+            list-style-type: none;
+            padding: 0;
+            width: 400px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .result-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .result-list li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>テストの成果を確認できます</h2>
+
+    <div class="originalFileBtn ">
+        UPLOAD
+        <input type="file" class="btn-square-pop" id="csv-file" accept=".csv" />
+    </div>
+    <p>ファイルが選択されていません</p>
+
+    <div class="chart-row">
+        <div id="chart1-container" style="display: none;">
+            <h3 id="title1">日別取り組み状況</h3>
+            <canvas id="graph1"></canvas>
+        </div>
+        <div id="chart2-container" style="display: none;">
+            <h3 id="title2">各問題正答率</h3>
+            <canvas id="graph2"></canvas>
+        </div>
+    </div>
+    <div class="chart-row">
+        <div id="chart3-container" style="display: none;">
+            <h3 id="title3">問題別平均回答時間</h3>
+            <canvas id="graph3"></canvas>
+        </div>
+        <div id="chart4-container" style="display: none;">
+            <h3 id="title4">日別の正答率</h3>
+            <canvas id="graph4"></canvas>
+        </div>
+    </div>
+    <script>
+        $('input').on('change', function () {
+
+            var file = $(this).prop('files')[0];
+            $('p').text("読み込みファイル: " + file.name);
+        });
+        // グローバル変数でチャートを保持します。
+        var chart1, chart2, chart3, chart4;
+
+        document.getElementById('csv-file').addEventListener('change', function (evt) {
+            var file = evt.target.files[0];
+
+            // ファイルが選択されていない場合、処理をスキップします。
+            if (!file) {
+                console.log("No file selected");
+                return;
+            }
+
+
+            // ファイルが選択されたら、グラフのタイトルを表示します。
+            document.getElementById('chart1-container').style.display = 'block';
+            document.getElementById('chart2-container').style.display = 'block';
+            document.getElementById('chart3-container').style.display = 'block';
+            document.getElementById('chart4-container').style.display = 'block';
+
+
+            Papa.parse(file, {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                complete: function (results) {
+                    var data = results.data;
+
+                    // 既存のチャートがあれば破棄します。
+                    if (chart1) chart1.destroy();
+                    if (chart2) chart2.destroy();
+                    if (chart3) chart3.destroy();
+                    if (chart4) chart4.destroy();
+
+                    // 日付ごとにデータを集計します。
+                    var dailyData = {};
+                    var dailyCorrect = {};
+                    data.forEach(function (row) {
+                        var date = row['回答日時'].split(' ')[0];
+                        if (!dailyData[date]) {
+                            dailyData[date] = 0;
+                            dailyCorrect[date] = 0;
+                        }
+                        dailyData[date]++;
+                        if (row['正解不正解'] == '正解') {
+                            dailyCorrect[date]++;
+                        }
+                    });
+
+                    // 日付の配列を作成し、ソートします。
+                    var dates = Object.keys(dailyData);
+                    dates.sort();
+
+                    // 最新の30日分の日付だけを取得します。
+                    var recentDates = dates.slice(Math.max(dates.length - 30, 0));
+
+                    // チャート1を作成します。
+                    var ctx1 = document.getElementById('graph1').getContext('2d');
+                    chart1 = new Chart(ctx1, {
+                        type: 'bar',
+                        data: {
+                            labels: recentDates,
+                            datasets: [{
+                                label: '取り組み問題数',
+                                data: recentDates.map(date => dailyData[date]),
+                                backgroundColor: 'steelblue'
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                x: {title: {display: true, text: '日付'}},
+                                y: {title: {display: true, text: '取り組み状況'}}
+                            }
+                        }
+                    });
+
+
+                    // 問題ごとに正答率を計算します。
+                    var questionData = {};
+                    data.forEach(function (row) {
+                        var question = row['問題番号'];
+                        if (!questionData[question]) {
+                            questionData[question] = {correct: 0, total: 0};
+                        }
+                        if (row['正解不正解'] == '正解') {
+                            questionData[question].correct++;
+                        }
+                        questionData[question].total++;
+                    });
+
+                    // 正答率の低い問題のトップ10を取得します。
+                    var accuracyData = [];
+                    for (var question in questionData) {
+                        var correct = questionData[question].correct;
+                        var total = questionData[question].total;
+                        accuracyData.push({question: question, accuracy: correct / total});
+                    }
+                    accuracyData.sort(function (a, b) {return a.accuracy - b.accuracy;});
+                    var top10 = accuracyData.slice(0, 10);
+
+                    // チャート2を作成します。
+                    var ctx2 = document.getElementById('graph2').getContext('2d');
+                    chart2 = new Chart(ctx2, {
+                        type: 'bar',
+                        data: {
+                            labels: top10.map(function (d) {return d.question;}),
+                            datasets: [{
+                                label: '正答率(6割以下が赤)',
+                                data: top10.map(function (d) {return d.accuracy;}),
+                                backgroundColor: top10.map(function (d) {
+                                    return d.accuracy < 0.6 ? 'red' : 'green';
+                                })
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                x: {title: {display: true, text: '問題番号'}},
+                                y: {title: {display: true, text: '正答率'}}
+                            }
+                        }
+                    });
+
+                    // 問題ごとの平均回答時間を計算します。
+                    var timeData = {};
+                    data.forEach(function (row) {
+                        var question = row['問題番号'];
+                        if (!timeData[question]) {
+                            timeData[question] = {time: 0, total: 0};
+                        }
+                        timeData[question].time += parseFloat(row['回答までの時間']);
+                        timeData[question].total++;
+                    });
+
+                    // 平均回答時間のデータを取得します。
+                    var avgTimeData = [];
+                    for (var question in timeData) {
+                        var time = timeData[question].time;
+                        var total = timeData[question].total;
+                        avgTimeData.push({question: question, avgTime: time / total});
+                    }
+                    avgTimeData.sort(function (a, b) {return b.avgTime - a.avgTime;}); // 時間が多いものから並べ替え
+
+                    // 上位15問のみを表示します。
+                    var top15Data = avgTimeData.slice(0, 15);
+
+                    // チャート3を作成します。
+                    var ctx3 = document.getElementById('graph3').getContext('2d');
+                    chart3 = new Chart(ctx3, {
+                        type: 'bar',
+                        data: {
+                            labels: top15Data.map(function (d) {return d.question;}),
+                            datasets: [{
+                                label: '平均回答時間',
+                                data: top15Data.map(function (d) {return d.avgTime;}), // 数値の平均回答時間を設定
+                                backgroundColor: 'steelblue'
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                x: {title: {display: true, text: '問題番号'}},
+                                y: {
+                                    title: {display: true, text: '平均回答時間'},
+                                    ticks: {
+                                        // y軸のラベルを分と秒の形式にカスタマイズ
+                                        callback: function (value, index, values) {
+                                            return formatTime(value);
+                                        }
+                                    }
+                                }
+                            },
+
+                            plugins: {
+                                tooltip: {
+                                    callbacks: {
+                                        label: function (context) {
+                                            var label = context.label;
+                                            var value = context.parsed.y;
+                                            return label + ': ' + formatTime(value);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+
+
+
+                    });
+
+
+
+                    // 日別の正答率を計算します。
+                    var dailyAccuracy = {};
+                    for (var date in dailyData) {
+                        dailyAccuracy[date] = dailyCorrect[date] / dailyData[date];
+                    }
+
+                    // 日付の配列を作成し、ソートします。
+                    var dates = Object.keys(dailyAccuracy);
+                    dates.sort();
+
+                    // 最新の30日分の日付だけを取得します。
+                    var recentDates = dates.slice(Math.max(dates.length - 30, 0));
+
+                    // チャート4を作成します。
+                    var ctx4 = document.getElementById('graph4').getContext('2d');
+                    chart4 = new Chart(ctx4, {
+                        type: 'line',
+                        data: {
+                            labels: recentDates,
+                            datasets: [{
+                                label: '正答率',
+                                data: recentDates.map(date => dailyAccuracy[date]),
+                                backgroundColor: 'steelblue',
+                                fill: false,
+                                borderColor: 'steelblue'
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                x: {title: {display: true, text: '日付'}},
+                                y: {title: {display: true, text: '正答率'}}
+                            }
+                        }
+                    });
+
+                    // 正答率と平均回答時間ごとに問題をグループ化します。
+                    var accuracyGroups = {};
+                    var avgTimeGroups = {};
+                    accuracyData.forEach(function (q) {
+                        if (!accuracyGroups[q.accuracy.toFixed(3)]) {
+                            accuracyGroups[q.accuracy.toFixed(3)] = [];
+                        }
+                        accuracyGroups[q.accuracy.toFixed(3)].unshift(q);
+                    });
+                    avgTimeData.forEach(function (q) {
+                        if (!avgTimeGroups[q.avgTime.toFixed(3)]) {
+                            avgTimeGroups[q.avgTime.toFixed(3)] = [];
+                        }
+                        avgTimeGroups[q.avgTime.toFixed(3)].unshift(q);
+                    });
+
+                    // 各グループを正答率と平均回答時間でソートします。
+                    var sortedAccuracyGroups = Object.keys(accuracyGroups).sort((a, b) => b - a).map(function (accuracy) {
+                        return accuracyGroups[accuracy];
+                    });
+                    var sortedAvgTimeGroups = Object.keys(avgTimeGroups).sort((a, b) => b - a).map(function (avgTime) {
+                        return avgTimeGroups[avgTime];
+                    });
+
+                    // トップ3とワースト3を取得します。
+                    var top3AccuracyGroups = sortedAccuracyGroups.slice(0, 3);
+                    var bottom3AccuracyGroups = sortedAccuracyGroups.slice(-3).reverse();
+                    var top3AvgTimeGroups = sortedAvgTimeGroups.slice(0, 3);
+                    var bottom3AvgTimeGroups = sortedAvgTimeGroups.slice(-3).reverse();
+
+
+                    // 結果を表示する要素を初期化します。
+                    var existingDiv = document.getElementById('resultDiv');
+                    if (existingDiv) {
+                        existingDiv.remove();
+                    }
+
+                    // 結果をリスト形式で表示します。
+                    var resultDiv = document.createElement('div');
+                    resultDiv.id = 'resultDiv';
+
+                    // 各グループの問題を最大5つまで表示し、それ以上は'etc...'と表示します。
+                    function displayQuestions(group) {
+                        if (group.length > 5) {
+                            return group.slice(0, 5).map(q => q.question).join(', ') + ', etc...';
+                        } else {
+                            return group.map(q => q.question).join(', ');
+                        }
+                    }
+
+                    // 平均回答時間を分と秒の形式に変換する関数を定義します。
+                    function formatTime(seconds) {
+                        if (seconds < 60) {
+                            return seconds.toFixed(1) + "秒";
+                        } else {
+                            var minutes = Math.floor(seconds / 60);
+                            var remainingSeconds = seconds % 60;
+                            return minutes + "分" + remainingSeconds.toFixed(1) + "秒";
+                        }
+                    }
+
+                    // 以前のコードをそのまま使用しますが、結果を表示する部分でformatTime関数を使用します。
+                    resultDiv.innerHTML = `
+<table>
+    <tr>
+        <td>
+            <ul class="result-list">
+                <li><strong>正答率がトップ3の問題:</strong><br>
+                    ${top3AccuracyGroups.map((group, i) => `${i + 1}. 正答率: ${(group[0].accuracy * 100).toFixed(0)}%<br>${displayQuestions(group)}`).join('<br><br>')}
+                </li>
+                <li><strong>正答率がワースト3の問題:</strong><br>
+                    ${bottom3AccuracyGroups.map((group, i) => `${i + 1}. 正答率: ${(group[0].accuracy * 100).toFixed(0)}%<br>${displayQuestions(group)}`).join('<br><br>')}
+                </li>
+            </ul>
+        </td>
+        <td>
+            <ul class="result-list">
+                <li><strong>回答時間がトップ3の問題:</strong><br>
+                    ${bottom3AvgTimeGroups.map((group, i) => `${i + 1}. 平均回答時間: ${formatTime(group[0].avgTime)}<br>${displayQuestions(group)}`).join('<br><br>')}
+                </li>
+                <li><strong>回答時間がワースト3の問題:</strong><br>
+                    ${top3AvgTimeGroups.map((group, i) => `${i + 1}. 平均回答時間: ${formatTime(group[0].avgTime)}<br>${displayQuestions(group)}`).join('<br><br>')}
+                </li>
+                
+            </ul>
+        </td>
+    </tr>
+</table>
+`;
+                    document.body.appendChild(resultDiv);
+
+
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

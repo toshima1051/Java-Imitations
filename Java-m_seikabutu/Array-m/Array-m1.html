@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Java Array quest-1</title>
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	<link rel="icon" href="array.png" type="images/x-icon">
+</head>
+
+<body>
+	
+	<div class="frame">
+		<div class="headframe"><a href="../index.html" class="txtdeconon">
+				<div class="plate">
+					<p class="script"><span>Program</span></p>
+					<p class="shadow text1">PRACTICE</p>
+					<p class="shadow text2">Java</p>
+					<p class="shadow text3">quest</p>
+					<p class="script"><span class="pstyle-w">with Array</span></p></a>
+				</div>
+			
+		</div>
+
+		<div class="mondai">
+			<p><span class="pstyle"><strong>問題A-1</strong> 空白に当てはまる選択肢を選んでください。</span></p>
+		</div>
+
+		<div>
+			<pre style="margin-top: 0px;" class="edit-back-ground resi"><code class="prettyprint fon linenums language-java">package array;
+
+public class Array {
+
+	public static void main(String[] args) {
+		
+		//要素数が5個(0~4)の配列を整数型と文字列型で宣言して  
+		
+		/*ここに選択肢のコードが入るよ*/
+		
+	}
+
+}</code></pre>
+		</div>
+		<p><span class="pstyle-1">選択肢:<strong>a</strong></span></p>
+		<div class="fle">
+			<pre style="margin-top: 0px; border: solid 2px skyblue;" class="resi"><code class="prettyprint fon linenums language-java">
+		//整数型
+		int[] intArray = new int[5]; 
+		
+		//文字列型
+		String[] stringArray = new String[5]; 
+		</code></pre>
+		</div>
+		<p><span class="pstyle-2">選択肢:<strong>b</strong></span></p>
+		<div>
+			<pre style="margin-top: 0px; border: solid 2px greenyellow;" class="resi"><code class="prettyprint fon linenums lang-java">
+		//整数型
+		int[] intArray = new int[4]; 
+		
+		//文字列型
+		String[] stringArray = new String[4]; 
+		</code></pre>
+		</div>
+		<p><span class="pstyle-3">選択肢:<strong>c</strong></span></p>
+		<div>
+			<pre style="margin-top: 0px; border: solid 2px orangered;" class="resi"><code class="prettyprint fon linenums lang-java">
+		//整数型
+		int  intArray = new int[5];  
+		
+		//文字列型
+		String  stringArray = new String[5];  
+		</code></pre>
+		</div>
+
+
+		<div>
+			<form id="myform">
+				<div class="pulldownset">
+					<form name="quiz-form">
+					<select id="cate" class="subbox" onchange="disableOptions(this)">
+						<option value="">解答を選択</option>
+						<option value="ha">a</option>
+						<option value="ne">b</option>
+						<option value="ne">c</option>
+					</select>
+					</form>
+
+					<select id="ha" class="subbox2 sb2">
+						<option value="kaku">正誤を確認</option>
+						<option value="ha1" style="color: darkred;" disabled>正解</option>
+					</select>
+
+					<select id="ne" class="subbox2 sb3">
+						<option value="kaku">正誤を確認</option>
+						<option value="ha2" style="color:darkblue" disabled>不正解</option>
+					</select>
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+				</div>
+				<br>
+				
+			</form>
+			
+		</div>
+		<div class="container">
+			<div class="item">
+				<div class="inner_item active btn-container"><button class="btn-2 custom-btn" id="btntrans"><span>ヒントだよ
+							Click Me！</span></button></div>
+				<pre class="resi"><p id="btntrans-text" class="hidden"><code class="prettyprint fon linenums ">int[] intArray = new int[3];のように配列は宣言するよ。
+int[3]だと要素数が3の配列ができるよ。
+//String型もint型も宣言の仕方は同じだよ。</code></p></pre>
+			</div>
+		</div>
+		<div class="switchdsp">
+			<label for="l-1">
+				<span class="clicktxt">解説だよ Click Me!</span>
+			</label>
+			<input type="checkbox" id="l-1">
+			<div class="dsp">
+				<pre style="margin-top: 0px; border: solid 2px darkorchid;" class="resi"><code class="prettyprint fon linenums lang-java">
+			 //整数型
+			                       //↓ここの中には要素数が入るよ。(この場合だと0~4となるよ。)
+			int[] intArray = new int[5];
+			 //↑配列だから([])が入るよ。
+			 //文字列型も同じ感じで書くよ。
+			String[] stringArray = new String[5];
+			
+			なのでこれと同じである　a　が正解になるよ。
+			
+			b　は要素数が足りないので不正解だよ。
+			c　はintやStringの後に[]がないから不正解だよ。
+			 </code></pre>
+			</div>
+		</div>
+
+
+		<div class="top_wrap">
+			<a href="Array-m2.html"><button class="custom-btn btn-1"><span>次の問題に移動する</span></button></a>
+		</div>
+		<div class="top_wraphome">
+			<a href="../index.html"><button class="custom-btn btn-3"><span>HOME</span></button></a>
+		</div>
+		
+		
+		
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<script src="../js/movemain.js"></script>
+
+</body>
+
+</html>

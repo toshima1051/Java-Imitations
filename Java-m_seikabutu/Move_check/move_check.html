@@ -1,0 +1,3627 @@
+<!--htmlにはファイルの内容をtemplateで記載する-->
+<!--検索タブを使用して『<template』で検索すると楽-->
+<!--css、onsenのものなどは上で管理しているため固有のjavaScriptのみ記載する-->
+<!--検索タブを使用して『id="codeList"』で検索するとコード部分が出てきます-->
+<!--OnsenUIを使用しています-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+	<link rel="stylesheet" href="../css/Sample.css">
+	<script src="../js/index2.js"></script>
+	<meta charset="utf-8">
+	<title>Javaの基礎確認</title>
+</head>
+
+<body>
+	<ons-splitter>
+		<ons-navigator id="myNavigator" page="home.html"></ons-navigator>
+	</ons-splitter>
+
+
+	<!--    ホームtemplate-->
+	<template id="home.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="center">Javaの基礎確認</div>
+			</ons-toolbar>
+			<ons-list id="category-list">
+				<ons-list-header>カテゴリ</ons-list-header>
+			</ons-list>
+
+
+			<ons-button modifier="large" style="background-color: #ADD8E6;"
+				onclick="location.href='../index.html'">Homeに戻る</ons-button>
+
+		</ons-page>
+	</template>
+
+
+
+
+
+	<!--カテゴリ別-->
+
+	<template id="basic.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">基礎の確認</div>
+			</ons-toolbar>
+			<ons-list id="basic-list">
+				<ons-list-header>基礎のトピック</ons-list-header>
+				<ons-list-item tappable onclick="fn.load('output.html')">標準出力の確認</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('comme.html')">コメントの確認</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('arithmetic.html')">算術演算子の確認</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('arithmetic2.html')">算術演算子の確認(2)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('increment.html')">インクリメント・デクリメント</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('increment2.html')">前置インクリメント・後置インクリメント</ons-list-item>
+			</ons-list>
+		</ons-page>
+	</template>
+
+
+	<template id="array.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">配列の確認</div>
+			</ons-toolbar>
+			<ons-list id="array-list">
+				<ons-list-header>配列のトピック</ons-list-header>
+				<ons-list-item tappable onclick="fn.load('gazou.html')">配列の確認（イメージ付き）</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('array_make.html')">配列の確認(1)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('array_test.html')">配列の確認(2)</ons-list-item>
+			</ons-list>
+		</ons-page>
+	</template>
+
+
+	<template id="for.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">for文の確認</div>
+			</ons-toolbar>
+			<ons-list id="for-list">
+				<ons-list-header>for文のトピック</ons-list-header>
+				<ons-list-item tappable onclick="fn.load('for_test.html')">for文の確認(1)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('for_int.html')">for文の確認(2)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('for_kakutyou.html')">拡張for文の確認</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('for_kuku.html')">for文の確認(3)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('while_test.html')">while文の確認</ons-list-item>
+			</ons-list>
+		</ons-page>
+	</template>
+
+	<template id="if.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">条件分岐の確認</div>
+			</ons-toolbar>
+			<ons-list id="if-list">
+				<ons-list-header>条件分岐のトピック</ons-list-header>
+				<ons-list-item tappable onclick="fn.load('if_sample.html')">if文の確認(1)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('if_else.html')">if文の確認(2)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('if_elseif.html')">if文の確認(3)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('if_ireko.html')">if文の確認(4)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('switch.html')">switch文の確認(1)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('switch2.html')">switch文の確認(2)</ons-list-item>
+			</ons-list>
+		</ons-page>
+	</template>
+
+
+
+	<template id="break.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">break・continueの確認</div>
+			</ons-toolbar>
+			<ons-list id="if-list">
+				<ons-list-header>break・continueのトピック</ons-list-header>
+				<ons-list-item tappable onclick="fn.load('break1.html')">break文の確認</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('continue.html')">continue文の確認</ons-list-item>
+			</ons-list>
+		</ons-page>
+	</template>
+
+
+	<template id="object.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">オブジェクト指向の確認</div>
+			</ons-toolbar>
+			<ons-list id="object-list">
+				<ons-list-header>オブジェクト指向のトピック</ons-list-header>
+				<ons-list-item tappable onclick="fn.load('method.html')">メソッドの確認(1)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('method2.html')">メソッドの確認(2)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('method3.html')">メソッドの確認(3)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('class.html')">クラスの確認(1)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('publicclass.html')">クラスの確認(2)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('publicclasspac.html')">クラスの確認(3)</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('constructor.html')">コンストラクタの確認</ons-list-item>
+
+			</ons-list>
+		</ons-page>
+	</template>
+
+
+	<template id="exceptions.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">例外処理の確認</div>
+			</ons-toolbar>
+			<ons-list id="exceptions-list">
+				<ons-list-header>例外処理のトピック</ons-list-header>
+				<ons-list-item tappable onclick="fn.load('exce.html')">例外処理の確認</ons-list-item>
+				<ons-list-item tappable onclick="fn.load('finally.html')">finallyブロックの確認</ons-list-item>
+
+
+			</ons-list>
+		</ons-page>
+	</template>
+
+
+
+	<!--ここから転移先ページ-->
+
+
+	<template id="output.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">標準出力の確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+
+				<meta charset="UTF-8">
+
+
+
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>標準出力の確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								System.out.printlnを使うことで出力を表示することができます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+									
+public class Sample {
+	public static void main(String[] args) {
+		int time = 7;
+		System.out.println(<select id="textSelect" onchange="output()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="HelloWorld">"HelloWorld"</option>
+			<option value="おはようございます">"おはようございます"</option>
+			<option value="7">time</option>
+			<option value="7時ですおはよう">time+"時ですおはよう"</option>
+		</select>);
+
+	}
+}
+							</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								System.out.printlnを使うことで出力を表示することができます。文字列は""(ダブルクォーテーション)で囲みます。<br>
+								変数はそのまま記述します。+を使うことで複数の要素を組み合わせて表示することもできます。<br>
+								このとき、""や+は全角（””,＋）ではなく半角("",+)を使用するように気を付けましょう。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+
+
+				</ons-page>
+
+
+				<script src="../js/select.js"></script>
+
+			</body>
+
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+	<template id="comme.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">コメントの基礎確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+
+				<meta charset="UTF-8">
+
+
+
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>コメントの確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								Javaのプログラミングでは、「コメント」というメモ書きを残せます。<br>
+								コメントはプログラムの処理には影響を与えないため、ソースコードに補足情報をプラスしたいときに便利です。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		<select id="textSelect" onchange="output()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="こんにちは">System.out.println("こんにちは");</option>
+			<option value="">//   System.out.println("こんにちは");</option>
+		</select>
+	}
+}							
+							</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								1行だけコメント化する場合は、頭にスラッシュを2つ（//）つけます。<br>
+								複数行をコメント化する場合は「/*」と「*/」ではさみます。<br>
+								/* ~ */の間にある文字はすべてコメント扱いとなり、プログラムの処理には反映されません。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+
+
+				</ons-page>
+
+
+				<script src="../js/select.js"></script>
+
+			</body>
+
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+
+	<template id="arithmetic.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">算術演算子の確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>算術演算子の確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								Javaの算術演算子は、数値の計算に使用されます。以下が主な算術演算子です。<br>
+								加算演算子（+）：二つの数値を加算します。例えば、a + bはaとbの和を返します。<br>
+								減算演算子（-）：一つの数値からもう一つの数値を減算します。例えば、a - bはaからbを引いた結果を返します。<br>
+								乗算演算子（*）：二つの数値を乗算します。例えば、a * bはaとbの積を返します。<br>
+								除算演算子（/）：一つの数値をもう一つの数値で除算します。例えば、a / bはaをbで割った結果を返します。<br>
+								剰余演算子（%）：一つの数値をもう一つの数値で除算した後の余りを返します。例えば、a % bはaをbで割った余りを返します。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 2;
+		System.out.println(a <span id="select-container"><select id="arithmeticSelect" onchange="arithmetic()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">+</option>
+			<option value="1">-</option>
+			<option value="2">*</option>
+			<option value="3">/</option>
+			<option value="4">%</option></select> b);
+
+	}
+}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+
+
+							<ons-list-item tappable>
+								aという変数には10、bという変数には2が入っています。プルダウンを切り替えることで対応した演算子の計算を見ることができます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+
+				</ons-page>
+
+
+				<script src="../js/select.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+	<template id="arithmetic2.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">算術演算子の確認(2)</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>算術演算子の確認(2)</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								Javaの算術演算子は、数値の計算に使用されます。以下が主な算術演算子です。<br>
+								加算演算子（+）：二つの数値を加算します。例えば、a + bはaとbの和を返します。<br>
+								減算演算子（-）：一つの数値からもう一つの数値を減算します。例えば、a - bはaからbを引いた結果を返します。<br>
+								乗算演算子（*）：二つの数値を乗算します。例えば、a * bはaとbの積を返します。<br>
+								除算演算子（/）：一つの数値をもう一つの数値で除算します。例えば、a / bはaをbで割った結果を返します。<br>
+								剰余演算子（%）：一つの数値をもう一つの数値で除算した後の余りを返します。例えば、a % bはaをbで割った余りを返します。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 2;
+		int ans = a <span id="select-container"><select id="arithmeticSelect" onchange="arithmetic()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">+</option>
+			<option value="1">-</option>
+			<option value="2">*</option>
+			<option value="3">/</option>
+			<option value="4">%</option></select> b;
+		System.out.println(ans);
+
+	}
+}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+
+
+							<ons-list-item tappable>
+								aという変数には10、bという変数には2が入っています。プルダウンを切り替えることで対応した演算子の計算を見ることができます。<br>
+								計算結果を直接表示するのではなく、一度ansという変数に結果を格納してからansを表示しています。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+
+				</ons-page>
+
+
+				<script src="../js/select.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+
+
+	<template id="increment.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">インクリメント・デクリメント</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>インクリメント・デクリメント</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								Javaの算術演算子にはインクリメントとデクリメントというものがあります。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		int a = 1;
+		System.out.println(a);
+		<span id="select-container"><select id="incrementSelect1" onchange="increment()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0"></option>
+			<option value="1">a++;</option>
+			<option value="2">a--;</option>
+			</select> 
+		System.out.println(a);
+		<span id="select-container"><select id="incrementSelect2" onchange="increment()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0"></option>
+			<option value="1">a++;</option>
+			<option value="2">a--;</option>
+			</select> 
+		System.out.println(a);
+
+	}
+}
+
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+
+
+							<ons-list-item tappable>
+								++をインクリメント演算子、--をデクリメント演算子といいます。インクリメントは１を足すことで、デクリメントは１を引くことです。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+
+
+				<script src="../js/select.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+
+	<template id="increment2.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">前置インクリメント・後置インクリメント</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>前置インクリメント・後置インクリメント</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								インクリメントは++の位置で前置と後置に分かれます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+									
+public class Sample {
+	public static void main(String[] args) {
+		int num = 1;
+		<span id="select-container"><select id="incrementSelect1" onchange="increment2()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">System.out.println(num);</option>
+			<option value="1">System.out.println(num++);</option>
+			<option value="2">System.out.println(++num);</option>
+			</select>
+		<span id="select-container"><select id="incrementSelect2" onchange="increment2()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">System.out.println(num);</option>
+			<option value="1">System.out.println(num++);</option>
+			<option value="2">System.out.println(++num);</option>
+			</select>
+		<span id="select-container"><select id="incrementSelect3" onchange="increment2()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">System.out.println(num);</option>
+			<option value="1">System.out.println(num++);</option>
+			<option value="2">System.out.println(++num);</option>
+			</select>
+
+	}
+
+}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+
+
+							<ons-list-item tappable>
+								++が前にあるのが前置、後ろにあるのが後置です。違いはインクリメントを行う順番です。<br>
+								前置では、まずインクリメントを行ってから他の処理を行います。<br>
+								そのため、System.out.println(++num);を実行すると元のnumに1を足してから、足されたnumが表示されます。<br>
+								後置では、まず他の処理を行い、最後にインクリメントを行います。<br>
+								そのため、System.out.println(num++);を実行すると元のnumが表示されてから、numに1を足します。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+
+
+				<script src="../js/select.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+
+
+	<template id="for_test.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">For文の確認(1)</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+
+				<meta charset="UTF-8">
+
+
+
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>for文の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								for文は「for （初期化式; 条件式; 変化式）」のように記述し、
+								条件式の結果がtrueのときに{}のブロック内の処理が実行されます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+
+	for (int i = 0; i < <span id="select-container"><select id="numberSelect" onchange="repeatText()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select></span>; i++) {
+		System.out.println("<select id="textSelect" onchange="repeatText()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="こんばんは">こんばんは</option>
+			<option value="こんにちは">こんにちは</option>
+			<option value="おはよう">おはよう</option>
+		</select>");
+		}
+	}
+}
+							</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								iが0から1ずつ増え、指定した数より小さい間繰り返します。3を入力した場合、iが0,1,2と増えていき3になると処理が終了するので3回表示されます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+
+
+				</ons-page>
+
+
+				<script src="../js/for.js"></script>
+
+			</body>
+
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+	<template id="for_int.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">For文の確認(2)</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>for文の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								for文は「for （初期化式; 条件式; 変化式）」のように記述し、
+								条件式の結果がtrueのときに{}のブロック内の処理が実行されます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+
+	for (int i = 0; i < <span id="select-container"><select id="numberSelect" onchange="repeatNum()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select></span>; i++) {
+		System.out.println("i = "+i);
+		}
+	}
+}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								iが0から1ずつ増え、指定した数より小さい間繰り返します。3を入力した場合、iが0,1,2と増えていき3になると処理が終了するので3回表示されます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+				</ons-page>
+
+
+				<script src="../js/for.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+
+	<template id="for_kakutyou.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">拡張For文の確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>拡張for文の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								拡張for命令（for-each命令とも言います）は、与えられた配列やコレクションから順に要素を取り出し、仮変数varに代入しながら、処理を繰り返します。
+								読みだすべき要素がなくなったところで、ループは終了します。<br>
+								for命令でも代用できますが、コレクションや配列の処理では拡張for命令の方がシンプルに記述できます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+	    int[] num = { <span id="select-container"><select id="numberSelect" onchange="repeatKaku()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="3">1,2,3</option>
+			<option value="4">1,2,3,4</option>
+			<option value="6">1,2,3,4,5,6</option>
+			<option value="1">1</option>
+		</select></span> };
+	    for (int val : num) {
+	      System.out.print(val);
+	    }		
+	}
+}
+			</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								コレクションや配列の数だけ処理を繰り返します。<br>
+								ここではプルダウンで要素を選択するとすべて取り出されているのがわかります。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+				</ons-page>
+
+
+				<script src="../js/for.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+
+
+	<template id="for_kuku.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">For文の確認(3)</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>for文の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								for文の２重ループを使用して、入力された数までの掛け算を実行します。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+    public static void main(String[] args){
+        
+        for (int i = 1; i <= <span id="select-container"><select id="numberSelect1" onchange="kuku()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option></select></span>; i++) {
+            for (int j = 1; j <= <span id="select-container"><select id="numberSelect2" onchange="kuku()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option></select></span>; j++) {
+                System.out.print(" " + i * j );    
+            }
+            System.out.println("");
+        }   
+    }
+}
+									
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								プルダウンを切り替え、どのfor文がどこを繰り返しているのか確認してください。<br>
+								例えば最初のプルダウンで3、次のプルダウンで5を選ぶと、<br>
+								①iが1の状態でjが1～5までループするため、1*1～1*5までが表示される。<br>
+								②jのループが終わり、改行をして、iのループに戻り、iが2になり、jが1～5までループするため、2*1～2*5までが表示される。<br>
+								③jのループが終わり、改行をして、iのループに戻り、iが3になり、jが1～5までループするため、3*1～3*5までが表示される。<br>
+								④jのループが終わり、改行をして、iが3より大きくなるため、ループが終了する。<br>
+								という流れで表示されます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+				</ons-page>
+
+
+				<script src="../js/for.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+
+
+
+	<template id="while_test.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">While文の確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>while文の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								while文は、条件式がtrueである限り処理を繰り返し実行します。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		int i = 0;
+		while (i < <span id="select-container"><select id="numberSelect" onchange="repeatNum()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select></span>) {
+			System.out.println("i = " + i);
+			i++;
+			}
+		}
+	}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								iが0から1ずつ増え、指定した数より小さい間繰り返します。3を入力した場合、iが0,1,2と増えていき3になると処理が終了するので3回表示されます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+				</ons-page>
+
+
+
+
+				<script src="js/for.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+	<template id="gazou.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">配列の確認（イメージ付き）</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>配列の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								配列とは、同じ型の値を複数にまとめてひとつの変数として扱うことができるものです。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		int[] numberArray = new int[<span id="select-container"><select id="numberSelect" onchange="changeImageAndText()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select></span>];
+		for(int i = 0; i< numberArray.length;i++){
+			numberArray[i]=i;
+		}
+		for (int i = 0; i < numberArray.length; i++) {
+			System.out.print(numberArray[i]);
+		}
+	}
+}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list-item tappable>動作</ons-list-item>
+						<ons-list>
+							<ons-list-item tappable id="imageList">
+								<div id="imageContainer"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								指定した数の配列を定義して、そこに0から順番に数字を入れ、それを順番に取り出して表示しています。配列の添え字は0から始まります。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+
+
+
+				<script src="../js/array.js"></script>
+			</body>
+
+			</html>
+
+
+
+		</ons-page>
+	</template>
+
+
+	<template id="array_make.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">配列の確認(1)</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>配列の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								配列とは、同じ型の値を複数にまとめてひとつの変数として扱うことができるものです。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+									
+import java.util.Arrays;
+        
+public class Sample  {
+    public static void main(String[] args){
+        int[] numberArray = new int[<span id="select-container"><select id="numberSelect" onchange="repeatArray()">
+            <option selected disabled hidden style='display: none' value=''></option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select></span>];
+        for(int i = 0; i< numberArray.length;i++){
+            numberArray[i]=i;
+        }
+    System.out.println(Arrays .toString(numberArray));
+}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								指定した数の配列を定義して、そこに0から順番に数字を入れ、それをArrays.toStringを使って文字列として表示しています。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+
+
+
+
+
+
+				<script src="../js/array.js"></script>
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+	<template id="array_test.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">配列の確認(2)</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>配列の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								配列とは、同じ型の値を複数にまとめてひとつの変数として扱うことができるものです。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;									
+									
+public class Sample {
+	public static void main(String[] args) {
+		int[] score = {60, 20, 50, 70, 80};
+		System.out.println(<span id="select-container"><select id="arraySelect" onchange="arrayView()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="60">score[0]</option>
+			<option value="20">score[1]</option>
+			<option value="50">score[2]</option>
+			<option value="70">score[3]</option>
+			<option value="80">score[4]</option>
+		</select></span>);
+	}
+}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								配列を定義する時点で、要素を入れて配列を初期化することができます。プルダウンを選択して配列を指定すると、その内容が表示されることが確認できます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+				</ons-page>
+
+
+				<script src="../js/array.js"></script>
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+	<template id="if_sample.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">if文の確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>if文の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								条件分岐とは、条件によって処理を分岐させることです。条件分岐では、if文を使います。<br>
+								たとえば「あなたの年齢は30歳以上ですか？」という問いに対して、<br>
+								①Yes（30歳以上）の場合は「あなたの年齢は30歳以上ですね！」と出力<br>
+								②Noの場合は何も出力しない<br>
+								といった具合に処理を分岐できます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		int age = <span id="select-container"><select id="numberSelect" onchange="ifTextage()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">0</option>
+			<option value="10">10</option>
+			<option value="20">20</option>
+			<option value="25">25</option>
+			<option value="30">30</option>
+			<option value="50">50</option>
+		</select></span>
+        if (age >= 30) {
+            System.out.println("あなたの年齢は30歳以上ですね！");
+        }
+            System.out.println("処理を終了します。")
+    }
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								if文を使うことでYes（30歳以上）の場合は「あなたの年齢は30歳以上ですね！」と出力、Noの場合は何も出力しないといった具合に処理を分岐しています。<br>
+								「処理を終了します。」はif文の外に書いて共通で表示されるようにしています。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+
+				<script src="../js/if.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+	<template id="if_else.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">if文の動作確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>if文の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								条件分岐とは、条件によって処理を分岐させることです。条件分岐では、if文を使います。<br>
+								もし条件を満たさなかった時も何か処理をしたければelseを使います。<br>
+								たとえば「あなたの年齢は30歳以上ですか？」という問いに対して、<br>
+								①Yes（30歳以上）の場合は「あなたの年齢は30歳以上ですね！」と出力<br>
+								②Noの場合は「あなたの年齢は30歳以上ではありません」と出力する<br>
+								のように分岐できます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		int age = <span id="select-container"><select id="numberSelect" onchange="ifelseTextage()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">0</option>
+			<option value="10">10</option>
+			<option value="20">20</option>
+			<option value="25">25</option>
+			<option value="30">30</option>
+			<option value="50">50</option>
+		</select></span>;
+        if (age >= 30) {
+            System.out.println("あなたの年齢は30歳以上ですね！");
+        }
+        else {
+            System.out.println("あなたの年齢は30歳以上ではありません");
+        }
+    }
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								elseを使うことでここでは30以上という条件を満たさなかった場合の処理を追加しています。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+				</ons-page>
+
+				<script src="../js/if.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+	<template id="if_elseif.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">if文の動作確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>if文の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								else（条件に一致しなかった場合）にさらに条件を付けたものがelse ifです。<br>
+								ここでは「あなたの年齢は30歳以上ですか？」という問いに対して、<br>
+								①Yes（30歳以上）の場合は「あなたの年齢は30歳以上ですね！」と出力<br>
+								②No（20歳以下）場合は「あなたの年齢は20歳以下ですね！」と出力<br>
+								③if文を抜けて「処理を終了します。」と表示<br>
+								25を選択するとどちらの条件も満たさないので「処理を終了します。」のみが出力されます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		int age = <span id="select-container"><select id="numberSelect" onchange="elseifTextage()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">0</option>
+			<option value="10">10</option>
+			<option value="20">20</option>
+			<option value="25">25</option>
+			<option value="30">30</option>
+			<option value="50">50</option>
+		</select></span>
+        if (age >= 30) {
+            System.out.println("あなたの年齢は30歳以上ですね！");
+        }
+        else if(age<=20){
+            System.out.println("あなたの年齢は20歳以下ですね！");
+        }
+        	System.out.println("処理を終了します。");
+    }
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								ここでは「あなたの年齢は30歳以上ですか？」という問いに対して、<br>
+								①Yes（30歳以上）の場合は「あなたの年齢は30歳以上ですね！」と出力<br>
+								②No（20歳以下）場合は「あなたの年齢は20歳以下ですね！」と出力<br>
+								③if文を抜けて「処理を終了します。」と表示<br>
+								25を選択するとどちらの条件も満たさないので「処理を終了します。」のみが出力されます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+				</ons-page>
+
+				<script src="../js/if.js"></script>
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+	<template id="if_ireko.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">if文の確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>if文の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								ifの中にさらにifを書くことで、一つ目のif条件を満たしたものの中でさらに条件を追加できます。<br>
+								たとえば「あなたの年齢は30歳以上ですか？」という問いに対して、<br>
+								①Yes（30歳以上）の場合はさらに「血液型はA型ですか？」と問います。<br>
+								②Yes（A型）の場合は「あなたの年齢は30歳以上、血液型はA型ですね！」と表示します。<br>
+								③No（A型以外）の場合は「あなたの年齢は30歳以上ですね！」と表示します。<br>
+								④No(30歳未満)の場合はなにも出力されません。<br>
+								⑤最後に「処理を終了します。」と表示されます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample  {
+   public static void main(String[] args){
+       int age = <span id="select-container"><select id="numberSelect" onchange="ifBlood()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">0</option>
+			<option value="10">10</option>
+			<option value="20">20</option>
+			<option value="25">25</option>
+			<option value="30">30</option>
+			<option value="50">50</option>
+		</select></span>;
+       String blood = "<select id="textSelect" onchange="ifBlood()">
+			<option selected disabled hidden style='display: none' value=''></option>									
+			<option value="A">A</option>
+			<option value="B">B</option>
+			<option value="AB">AB</option>
+			<option value="O">O</option>
+		</select>";
+       if(age>=30) {
+        if(blood.equals("A")) {
+        System.out.println("あなたの年齢は30歳以上、血液型はA型ですね！");
+        }else {
+        System.out.println("あなたの年齢は30歳以上ですね！");
+        }
+        }
+        System.out.println("処理を終了します。");
+    }
+}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								if文の中にif文を書くことで一つ目の条件を満たした中からさらに条件分岐をすることができます。これをifの入れ子（ネスト）といいます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+
+				<script src="../js/if.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+
+	<template id="switch.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">switch文の確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>switch文の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								switch文は指定した変数が特定の値をとる場合に、実行するコードを指定できます。<br>
+								変数は switch で指定して、条件となる値は case に指定します。case 値: に続けて、 実行するコードを指定できます。<br>
+								コードブロックは break まで実行されます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		int number = <span id="select-container"><select id="numberSelect" onchange="switch_int()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select></span>;
+		switch (number) {
+		case 1:
+			System.out.println("numberは1です");
+			break;
+		case 2:
+			System.out.println("numberは2です");
+			break;
+		case 3:
+			System.out.println("numberは3です");
+			break;
+		default:
+			System.out.println("numberは1, 2, 3以外です");
+		}
+	}
+}									
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								switch文は指定した変数が特定の値をとる場合に、実行するコードを指定できます。<br>
+								ここではnumberが1から3までの場合対応したコードが実行され、そうでない場合はdefaultで指定したコードが実行されます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+
+				<script src="../js/switch.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+	<template id="switch2.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">switch文の確認(2)</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>switch文の動作確認(2)</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								switch文は指定した変数が特定の値をとる場合に、実行するコードを指定できます。<br>
+								変数は switch で指定して、条件となる値は case に指定します。case 値: に続けて、 実行するコードを指定できます。<br>
+								ここではbreakがない場合の処理を確認することができます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		int number = <span id="select-container"><select id="numberSelect" onchange="switch_notbreak()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select></span>;
+		switch (number) {
+		case 1:
+			System.out.println("numberは1です");
+		case 2:
+			System.out.println("numberは2です");
+		case 3:
+			System.out.println("numberは3です");
+		default:
+			System.out.println("numberは1, 2, 3以外です");
+		}
+	}
+}									
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								switch文は指定した変数が特定の値をとる場合に、実行するコードを指定できます。<br>
+								この文にはbreak文がないため、一致したcase以降のすべてのcaseの内容が実行されてしまいます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+
+				<script src="../js/switch.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+	<template id="break1.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">break文の確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>break文の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								breakとは、繰り返し（for、while、do while）や<br>
+								条件分岐（switch、if）ブロックから抜け出すための制御文です。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		int val = 0;
+		while (val < 10) {
+			System.out.print(val);
+			val++;
+			if (val > <span id="select-container"><select id="numberSelect" onchange="breakif()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+		</select></span>) {
+				break;
+			}
+		} 
+	}
+}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								ここではvalが10より小さい間ループしますが、<br>
+								if文の条件を満たしたときにbreakし、ループから脱出します。<br>
+								プルダウンで指定する数を変えるとその数までしか表示されなくなることが確認できます。<br>
+								これは、ifの条件を満たしたときにbreakしてループから抜けるためです。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+
+				<script src="../js/break.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+
+	<template id="continue.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">continue文の確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>continue文の動作確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								continueはbreakと似ていますが、<br>
+								breakは繰返し処理を終了するのに対して、continueは次の繰り返し処理へスキップします。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+	    for (int i = 1; i < 20; i++) {
+	        if (i % <span id="select-container"><select id="numberSelect" onchange="continueif()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+		</select></span> == 0) {
+	        	continue; 
+	        	}
+	        System.out.print(i + "/");
+	      } 
+	  }
+	}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								ここでは1～19までループする中で、プルダウンで選択した数字で割り切れる数の時、continueを読み込むようになっています。<br>
+								その結果、プルダウンで指定した数の倍数の数字だけが、表示する処理をスキップされているのがわかります。<br>
+								たとえば2を選択したときは奇数のみが表示されます。<br>
+								（1を選択した場合、すべて1の倍数なので何も表示されません）
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+
+				<script src="../js/break.js"></script>
+
+			</body>
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+
+	<template id="method.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">メソッドの確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>メソッドの確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								メソッドとは、いくつかの処理をひとまとめにしたものです。<br>
+								処理をメソッドにしてまとめておくことで、<br>
+								同じ処理を繰り返し行う場合に同じコードを記述するのではなく、<br>
+								メソッドを繰り返し使用するだけでよくなります。<br>
+								ここでは足し算を行いその結果を表示する「add」と名付けたメソッドに引数を２つ渡し、実行しています。
+
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		add(<span id="select-container"><select id="numberSelect1" onchange="sum()">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option></select>, <span id="select-container"><select id="numberSelect2" onchange="sum()">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option></select>);
+	}
+
+	private static void add(int num1, int num2) {
+		int addAns = num1 + num2;
+		System.out.println("答えは" + addAns+ "です。");
+	}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								ここでのaddは足し算をし、その結果を表示するまでの処理を行っています。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+				</ons-page>
+
+				<script src="../js/select.js"></script>
+
+			</body>
+
+			</html>
+
+
+
+		</ons-page>
+	</template>
+
+
+	<template id="method2.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">メソッドの確認(2)</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>メソッドの確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								メソッドとは、いくつかの処理をひとまとめにしたものです。<br>
+								処理をメソッドにしてまとめておくことで、<br>
+								同じ処理を繰り返し行う場合に同じコードを記述するのではなく、<br>
+								メソッドを繰り返し使用するだけでよくなります。<br>
+								ここでは足し算を行う「add」と名付けたメソッドに引数を２つ渡し、実行しています。
+
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;									
+									
+public class Sample {
+	public static void main(String[] args) {
+		int addNum = add(<span id="select-container"><select id="numberSelect1" onchange="sum()">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option></select>, <span id="select-container"><select id="numberSelect2" onchange="sum()">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option></select>);
+		System.out.println("答えは" + addNum + "です。");
+	}
+
+	private static int add(int num1, int num2) {
+		int addAns = num1 + num2;
+		return addAns;
+	}
+
+}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								ここでのaddは足し算をするまでの処理を行っています。<br>
+								addは実行されると足し算を行い、returnで足し算の結果を返します。<br>
+								帰ってきた結果をint型の変数に格納し、それを表示しています。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+				</ons-page>
+
+				<script src="../js/select.js"></script>
+
+			</body>
+
+			</html>
+
+
+
+		</ons-page>
+	</template>
+
+
+
+	<template id="method3.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">メソッドの確認(3)</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>メソッドの確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								メソッドとは、いくつかの処理をひとまとめにしたものです。<br>
+								処理をメソッドにしてまとめておくことで、<br>
+								同じ処理を繰り返し行う場合に同じコードを記述するのではなく、<br>
+								メソッドを繰り返し使用するだけでよくなります。<br>
+								ここでは足し算を行う「add」と名付けたメソッドに引数を２つ渡し、実行しています。
+
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+package sample;
+
+public class Sample {
+	public static void main(String[] args) {
+		System.out.println("答えは" + add(<span id="select-container"><select id="numberSelect1" onchange="sum()">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option></select>, <span id="select-container"><select id="numberSelect2" onchange="sum()">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option></select>) + "です。");
+	}
+
+	private static int add(int num1, int num2) {
+		int addAns = num1 + num2;
+		return addAns;
+	}
+
+}
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								ここでのaddは足し算をするまでの処理を行っています。<br>
+								addは実行されると足し算を行い、returnで足し算の結果を返します。<br>
+								帰ってきた結果を今回はそのまま表示させています。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+				</ons-page>
+
+				<script src="../js/select.js"></script>
+
+			</body>
+
+			</html>
+
+
+
+		</ons-page>
+	</template>
+
+
+	<template id="class.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">クラスの確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+
+				<meta charset="UTF-8">
+
+
+
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>クラスの確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								Javaでは、関連するデータや処理をまとめた「クラス」という部品を作っておき、その部品を自由に組み合わせ、必要であれば再利用することで効率よくプログラムを組むことができます。<br>
+								インスタンスを生成することでクラスを使用することができます。「クラス名 変数名 = new クラス名(引数);」<br>
+								1つのソースコードの中に複数のclass クラス名{ }という形があった場合、コンパイル時にはその分だけクラスファイルが生成されます。<br>
+								1つのソースコードの中に2つ以上の public class クラス名{ }という形があった場合は、<br>
+								『クラス名の前にpublicを付けてよいのはファイル名とクラス名が一致するときだけ』というルールがあるためコンパイルに失敗します。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">									
+package sample;
+									
+public class Sample {
+	public static void main(String[] args) {
+			Sub sub = new Sub();
+			sub.publicMethod();
+	}
+}
+ 
+class Sub {	
+	public void publicMethod() {
+		System.out.println(<select id="textSelect" onchange="output()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="HelloWorld">"HelloWorld"</option>
+			<option value="おはようございます">"おはようございます"</option>
+			<option value="こんにちは">"こんにちは"</option>
+		</select>);
+	}
+}							
+					</pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								クラスからインスタンスを生成すれば、クラスで定義したメソッドや変数を使えるようになります。<br>
+								ここではSub sub = new Sub();でインスタンスを生成して、sub.publicMethod();でSubクラスのpublicMethod()を呼び出しています。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+
+
+				</ons-page>
+
+
+				<script src="../js/select.js"></script>
+
+			</body>
+
+
+			</html>
+
+
+		</ons-page>
+	</template>
+
+
+
+	<template id="publicclass.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">クラスの確認(2)</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>クラスの確認(2)</h2>
+						<ons-list>
+							<ons-list-item tappable>
+								publicはアクセス修飾子という概念です。 <br>
+								publicをつけた状態は、全てのクラスからアクセスを許可します。<br>
+								つけない状態はパッケージプライベートと言い、同じパッケージからだけアクセスを許可します。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+					<ons-card>
+						<h2>表示切り替えボタン</h2>
+						<ons-list>
+							<ons-list-item tappable onclick="showCode('sample')">Sample.javaを表示</ons-list-item>
+							<ons-list-item tappable onclick="showCode('greeting')">Greeting.javaを表示</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list-item tappable id="codeList">
+							<pre id="sample" class="code-container">
+package sample;
+
+//Mainクラスの定義
+public class Sample {
+	public static void main(String[] args) {
+		// Greetingクラスのインスタンスを作成
+		Greeting greeting = new Greeting();
+
+		//メソッドを呼び出し
+		<select id="textSelect" onchange="output()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="Hello, World!">greeting.sayHello();</option>
+			<option value="Sushi!">greeting.sayFood();</option>
+			<option value="Sushi,Tempura!">greeting.sayFoods();</option>
+		</select>
+	}
+}
+            </pre>
+							<pre id="greeting" class="code-container" style="display: none;">
+package sample;
+
+//Greetingクラスの定義
+public class Greeting {
+	//メソッドの定義
+	public void sayHello() {
+		System.out.println("Hello, World!");
+	}
+
+	public void sayFood() {
+		System.out.println("Sushi!");
+	}
+
+	public void sayFoods() {
+		System.out.println("Sushi,Tempura!");
+	}
+}
+            </pre>
+						</ons-list-item>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								ここでは同じパッケージからアクセスをしていますが、<br>
+								publicを付けることで異なるパッケージからもアクセスができるようになります。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+
+				<script>
+					function showCode(id) {
+						var containers = document.getElementsByClassName('code-container');
+						for (var i = 0; i < containers.length; i++) {
+							containers[i].style.display = 'none';
+						}
+						document.getElementById(id).style.display = 'block';
+					}
+				</script>
+
+
+				<script src="../js/select.js"></script>
+
+			</body>
+
+			</html>
+
+
+
+		</ons-page>
+	</template>
+
+
+
+	<template id="publicclasspac.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">クラスの確認(3)</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>クラスの確認(3)</h2>
+						<ons-list>
+							<ons-list-item tappable>
+								publicはアクセス修飾子という概念です。 <br>
+								publicをつけた状態は、全てのクラスからアクセスを許可します。<br>
+								つけない状態はパッケージプライベートと言い、同じパッケージからだけアクセスを許可します。<br>
+								異なるパッケージからアクセスする場合importをつかいます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+					<ons-card>
+						<h2>表示切り替えボタン</h2>
+						<ons-list>
+							<ons-list-item tappable onclick="showCode('sample')">Sample.javaを表示</ons-list-item>
+							<ons-list-item tappable onclick="showCode('greeting')">Greeting.javaを表示</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list-item tappable id="codeList">
+							<pre id="sample" class="code-container">
+package sample;
+
+//ここでimportする
+import greet.Greeting;
+
+//Mainクラスの定義
+public class Sample {
+	public static void main(String[] args) {
+		// Greetingクラスのインスタンスを作成
+		Greeting greeting = new Greeting();
+
+		//メソッドを呼び出し
+		<select id="textSelect" onchange="output()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="Hello, World!">greeting.sayHello();</option>
+			<option value="Sushi!">greeting.sayFood();</option>
+			<option value="Sushi,Tempura!">greeting.sayFoods();</option>
+		</select>
+	}
+}
+            </pre>
+							<pre id="greeting" class="code-container" style="display: none;">
+package greet;
+
+//Greetingクラスの定義
+public class Greeting {
+	//メソッドの定義
+	public void sayHello() {
+		System.out.println("Hello, World!");
+	}
+
+	public void sayFood() {
+		System.out.println("Sushi!");
+	}
+
+	public void sayFoods() {
+		System.out.println("Sushi,Tempura!");
+	}
+}
+            </pre>
+						</ons-list-item>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								ここでは、greetというpackageにあるGreetingクラスのメソッドを呼び出しています。<br>
+								import greet.Greeting;でインポートをし、Greeting greeting = new Greeting();でインスタンスを作成<br>
+								その後、greeting.メソッド名でGreetingのメソッドを呼び出しています。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+
+				<script>
+					function showCode(id) {
+						var containers = document.getElementsByClassName('code-container');
+						for (var i = 0; i < containers.length; i++) {
+							containers[i].style.display = 'none';
+						}
+						document.getElementById(id).style.display = 'block';
+					}
+				</script>
+
+
+				<script src="../js/select.js"></script>
+
+			</body>
+
+			</html>
+
+
+
+		</ons-page>
+	</template>
+
+
+
+
+	<template id="constructor.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">コンストラクタの確認</div>
+			</ons-toolbar>
+			<!-- ここにページの内容を追加 -->
+
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>コンストラクタの確認</h2>
+						<ons-list>
+							<ons-list-item tappable>
+								コンストラクタとは、オブジェクト指向のプログラミングで利用される「クラス」の処理を実行するために「インスタンス」を生成する際に実行される機能を指します。<br>
+								コンストラクタでは一般的にインスタンスを作成する際に「初期値」を設定するような処理を記述します。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+					<ons-card>
+						<h2>表示切り替えボタン</h2>
+						<ons-list>
+							<ons-list-item tappable onclick="showCode('sample')">Sample.javaを表示</ons-list-item>
+							<ons-list-item tappable onclick="showCode('dog')">Dog.javaを表示</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list-item tappable id="codeList">
+							<pre id="sample" class="code-container">
+package sample;
+
+public class Sample {
+    public static void main(String[] args) {
+        // 犬クラスからブルドッグのインスタンスを生成
+        Dog bulldog = new Dog(<select id="textSelect" onchange="output()">
+			<option selected disabled hidden style='display: none' value=''></option>
+			<option value="ポチは3歳です">"ポチ" , 3</option>
+			<option value="タマは5歳です">"タマ" , 5</option>
+			<option value="タケシは22歳です">"タケシ" , 22</option>
+		</select>);
+
+        // ブルドッグの名前と年齢を出力
+        bulldog.outDogAge();
+    }
+}
+            </pre>
+							<pre id="dog" class="code-container" style="display: none;">
+package sample;
+
+//犬クラスを定義
+public class Dog {
+    private String name; // 犬の名前
+    private int age;     // 犬の年齢
+
+    // コンストラクタ（nameとageを初期化）
+    public Dog( String name, int age ) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // 犬の年齢を出力するメソッド
+    public void outDogAge() {
+        System.out.println(this.name + "は" + this.age + "歳です");
+    }
+}
+            </pre>
+						</ons-list-item>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								サンプルコードでは引数ありのコンストラクタで、引数に指定された値をメンバ変数に設定する処理を記述しています。<br>
+								ここではコンストラクタを使用してnameとageを初期化しています。<br>
+								その後bulldog.outDogAge();で設定した犬の名前と年齢を出力しています。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+
+				<script>
+					function showCode(id) {
+						var containers = document.getElementsByClassName('code-container');
+						for (var i = 0; i < containers.length; i++) {
+							containers[i].style.display = 'none';
+						}
+						document.getElementById(id).style.display = 'block';
+					}
+				</script>
+
+
+				<script src="../js/select.js"></script>
+
+			</body>
+
+			</html>
+
+
+
+		</ons-page>
+	</template>
+
+
+
+
+	<template id="exce.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">例外処理の確認</div>
+			</ons-toolbar>
+
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+
+					<ons-card>
+						<h2>例外処理の確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								Javaの例外処理は、プログラムの実行中にエラーが発生した場合にそれを捕捉し、適切に処理するための仕組みです。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+public class Sample {
+    public static void main(String[] args) {
+        try {
+            int[] myNumbers = {1, 2, 3};
+            System.out.println(myNumbers[<select id="indexSelect" onchange="exception()">
+                <option selected disabled hidden style='display: none' value=''></option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("配列の範囲外にアクセスしました。");
+        }
+    }
+}
+                    </pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								trycatch文を使うことでエラーハンドリングをすることができます。<br>
+								ここでは配列の範囲を超えたときのArrayIndexOutOfBoundsExceptionをキャッチして、メッセージを出力しています。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+				</ons-page>
+				<script src="../js/exception.js"></script>
+			</body>
+
+			</html>
+		</ons-page>
+
+	</template>
+
+
+	<template id="finally.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left">
+					<ons-back-button>Back</ons-back-button>
+				</div>
+				<div class="center">finallyブロックの確認</div>
+			</ons-toolbar>
+
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+
+				<meta charset="UTF-8">
+			</head>
+
+			<body>
+				<ons-page>
+					<ons-toolbar>
+
+						<div class="center">Javaの基礎確認</div>
+					</ons-toolbar>
+
+					<ons-card>
+						<h2>finallyブロックの確認</h2>
+
+						<ons-list>
+							<ons-list-item tappable>
+								Javaのfinallyブロックは、tryブロックとcatchブロックの後に配置され、例外が発生しても発生しなくても実行されるコードを記述します。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable id="codeList">
+								<pre id="code-container">
+public class Sample {
+    public static void main(String[] args) {
+        try {
+            int[] myNumbers = {1, 2, 3};
+            System.out.println(myNumbers[<select id="indexSelect" onchange="finally_block()">
+                <option selected disabled hidden style='display: none' value=''></option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("エラー: 配列の範囲外にアクセスしました。");
+        } finally {
+            System.out.println("finallyブロックが実行されました。");
+        }
+    }
+}
+                    </pre>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								出力結果
+							</ons-list-item>
+							<ons-list-item tappable>
+								<div id="output"></div>
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+					<ons-card>
+						<ons-list>
+							<ons-list-item tappable>
+								説明
+							</ons-list-item>
+							<ons-list-item tappable>
+								finallyブロックに記載したものは、エラーが発生してもしなくても実行されます。<br>
+								エラーメッセージが出ても「finallyブロックが実行されました。」と表示されることが確認できます。
+							</ons-list-item>
+						</ons-list>
+					</ons-card>
+
+
+				</ons-page>
+				<script src="../js/exception.js"></script>
+
+			</body>
+
+			</html>
+		</ons-page>
+
+	</template>
+
+
+</body>
+
+</html>

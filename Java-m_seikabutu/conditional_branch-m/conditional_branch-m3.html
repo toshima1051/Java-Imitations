@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Java C-branch quest-3</title>
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	<link rel="icon" href="loot.png" type="images/x-icon">
+</head>
+
+<body>
+	<div class="frame">
+		<div class="headframe"><a href="../index.html" class="txtdeconon">
+			<div class="plate">
+				<p class="script"><span>Program</span></p>
+				<p class="shadow text1">PRACTICE</p>
+				<p class="shadow text2">Java</p>
+				<p class="shadow text3">quest</p>
+				<p class="script"><span class="pstyle-c">with<br> Conditional-branch</span></p></a>
+			</div>
+			
+		</div>
+
+		<div class="mondai">
+			<p><span class="pstyle"><strong>問題C-3</strong> 空白に当てはまる選択肢を選んでください。</span></p>
+		</div>
+
+		<div>
+			<pre style="margin-top: 0px;" class="edit-back-ground resi"><code class="prettyprint fon linenums lang-java">package switchdivide;
+
+public class switch_m {
+
+	public static void main(String[] args) {
+		//a = 1またはa = 2の時は、画面に「小」と表示する
+		//a = 3またはa = 4の時は、画面に「中」と表示する
+		//a = 5またはa = 6の時は、画面に「大」と表示する
+		int a = 3;
+
+		/*ここに選択肢のコードが入るよ*/
+	}
+}
+</code></pre>
+		</div>
+		<p><span class="pstyle-1">選択肢:<strong>a</strong></span></p>
+		<div class="fle">
+			<pre style="margin-top: 0px; border: solid 2px skyblue;" class="resi"><code class="prettyprint fon linenums lang-java">
+		switch {
+		case 1:
+		case 2:
+			System.out.println("小");
+			break;
+		case 3:
+		case 4:
+			System.out.println("中");
+			break;
+		case 5:
+		case 6:
+			System.out.println("大");
+			break;
+		}
+		</code></pre>
+		</div>
+		<p><span class="pstyle-2">選択肢:<strong>b</strong></span></p>
+		<div>
+			<pre style="margin-top: 0px; border: solid 2px greenyellow;" class="resi"><code class="prettyprint fon linenums lang-java">
+		switch(a) {
+		case 1:
+		case 2:
+			System.out.println("小");
+		case 3:
+		case 4:
+			System.out.println("中");
+		case 5:
+		case 6:
+			System.out.println("大");
+		}
+		</code></pre>
+		</div>
+		<p><span class="pstyle-3">選択肢:<strong>c</strong></span></p>
+		<div>
+			<pre style="margin-top: 0px; border: solid 2px orangered;" class="resi"><code class="prettyprint fon linenums lang-java">
+		switch(a) {
+		case 1:
+		case 2:
+			System.out.println("小");
+			break;
+		case 3:
+		case 4:
+			System.out.println("中");
+			break;
+		case 5:
+		case 6:
+			System.out.println("大");
+			break;
+		}
+		</code></pre>
+		</div>
+
+
+		<div>
+			<form>
+				<div class="pulldownset">
+					<select id="cate" class="subbox">
+						<option value="">解答を選択</option>
+						<option value="ne">a</option>
+						<option value="ne">b</option>
+						<option value="ha">c</option>
+					</select>
+
+					<select id="ha" class="subbox2 sb2">
+						<option value="">正誤を確認</option>
+						<option value="ha1" style="color: darkred;">正解</option>
+					</select>
+
+					<select id="ne" class="subbox2 sb3">
+						<option value="">正誤を確認</option>
+						<option value="ha2" style="color:darkblue">不正解</option>
+					</select>
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+				</div>
+				<br>
+
+
+
+			</form>
+		</div>
+		<div class="container">
+			<div class="item">
+				<div class="inner_item"><button class="btn-2 custom-btn" id="btntrans"><span>ヒントだよ Click Me！</span></button></div>
+				<pre class="resi"><p id="btntrans-text" class="hidden"><code class="prettyprint fon linenums ">switch文は、
+該当するcaseの部分から順に実行され、
+breakがくるまで続けるよ。
+breakがないと、余計な処理まで実行されることになってしまうよ。
+				</code></p></pre>
+			</div>
+
+		</div>
+		<div>
+			<div class="switchdsp">
+			<label for="l-1">
+				<span class="clicktxt">解説です Click Me!</span>
+			</label>
+			<input type="checkbox" id="l-1">
+			<div class="dsp">
+				<pre style="margin-top: 0px; border: solid 2px darkorchid;" class="resi"><code class="prettyprint fon linenums lang-java">//基本構文
+switch(整数式){
+case 定数式1:
+    処理1;
+    break;
+case 定数式2:
+    処理2;
+    break;
+default:
+    処理3:
+}
+//defaultはどのcaseにも当てはまらなかった場合に実行されるよ。
+//c が正しく書かれているため、正解となります。
+//a は、(整数式)の部分がないため、誤りとなります。
+//b は、breakがないため、余計な処理も実行してしまいます。そのため今回の場合だと
+中
+大
+//という表示になってしまうので、誤りです。
+				</code>
+			 </code></pre>
+			</div>
+		</div>
+
+			<div class="top_wrap">
+				<a href="conditional_branch-m2.html"><button class="custom-btn btn-3"><span>前の問題に移動する</span></button></a>
+				<a href="conditional_branch-m4.html"><button class="custom-btn btn-1"><span>次の問題に移動する</span></button></a>
+			</div>
+			<div class="top_wraphome">
+			<a href="../index.html"><button class="custom-btn btn-3"><span>HOME</span></button></a>
+			</div>
+		</div>
+		<script src="../js/movemain.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+</body>
+
+</html>

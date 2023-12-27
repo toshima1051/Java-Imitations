@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Java Object quest-1</title>
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	<link rel="icon" href="object.png" type="images/x-icon">
+</head>
+
+<body>
+	<div class="frame">
+		<div class="headframe"><a href="../index.html" class="txtdeconon">
+				<div class="plate">
+					<p class="script"><span>Program</span></p>
+					<p class="shadow text1">PRACTICE</p>
+					<p class="shadow text2">Java</p>
+					<p class="shadow text3">quest</p>
+					<p class="script"><span class="pstyle-o">with Object</span></p></a>
+				</div>
+			
+		</div>
+
+		<div class="mondai">
+			<p><span class="pstyle"><strong>問題O-1</strong> 空白に当てはまる選択肢を選んでください。</span></p>
+		</div>
+
+		<div>
+			<h4>Main.java</h4>
+			<pre style="margin-top: 0px;" class="edit-back-ground resi"><code class="prettyprint fon linenums lang-java">package object;
+
+public class object_m {
+
+	public static void main(String[] args) {
+		//空白のところを埋める選択肢を選んでください
+
+		//Employeeクラスのオブジェクトを生成
+		A
+		
+		//Employeeオブジェクトに社員番号と社員名をセット
+		employee.setData(1234, "やまだ");
+		
+		//Employeeオブジェクトの社員番号を出力
+		B
+		
+		//employeeオブジェクトの社員名を出力
+		C
+	}
+}</code></pre>
+<h4>Employee.java</h4>
+<pre style="margin-top: 0px;" class="edit-back-ground resi"><code class="prettyprint fon linenums lang-java">package object;
+
+public class Employee {
+	//社員番号
+	private int id;
+	//社員名
+	private String name;
+	
+	//社員番号と社員名をオブジェクトにセットする(setter)
+	public void setData(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	//社員番号の情報を取得する(getter)
+	public int getId() {
+		return id;
+	}
+	//社員名の情報を取得する(getter)
+	public String getName() {
+		return name;
+	}
+}</code></pre>
+		</div>
+		<p><span class="pstyle-1">選択肢:<strong>a</strong></span></p>
+		<div class="fle">
+			<pre style="margin-top: 0px; border: solid 2px skyblue;" class="resi"><code class="prettyprint fon linenums lang-java">
+	A、new Employee ();
+	B、System.out.println("社員番号：" + Employee.getId());
+	C，System.out.println("社員名：" + Employee.getName());
+		</code></pre>
+		</div>
+		<p><span class="pstyle-2">選択肢:<strong>b</strong></span></p>
+		<div>
+			<pre style="margin-top: 0px; border: solid 2px greenyellow;" class="resi"><code class="prettyprint fon linenums lang-java">
+	A、Employee employee = new Employee ();
+	B、System.out.println("社員番号：" + employee.getId());
+	C，System.out.println("社員名：" + employee.getName());
+		</code></pre>
+		</div>
+		<p><span class="pstyle-3">選択肢:<strong>c</strong></span></p>
+		<div>
+			<pre style="margin-top: 0px; border: solid 2px orangered;" class="resi"><code class="prettyprint fon linenums lang-java">
+	A、Employee employee = new Employee ();
+	B、System.out.println("社員番号：" + Employee.getId());
+	C，System.out.println("社員名：" + Employee.getName());  
+		</code></pre>
+		</div>
+
+
+		<div>
+			<form id="myform">
+				<div class="pulldownset">
+					<select id="cate" class="subbox">
+						<option value="">解答を選択</option>
+						<option value="ne">a</option>
+						<option value="ha">b</option>
+						<option value="ne">c</option>
+					</select>
+
+					<select id="ha" class="subbox2 sb2">
+						<option value="">正誤を確認</option>
+						<option value="ha1" style="color: darkred;">正解</option>
+					</select>
+
+					<select id="ne" class="subbox2 sb3">
+						<option value="">正誤を確認</option>
+						<option value="ha2" style="color:darkblue">不正解</option>
+					</select>
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+				</div>
+				<br>
+				
+			</form>
+			
+		</div>
+		<div class="container">
+			<div class="item">
+				<div class="inner_item active btn-container"><button class="btn-2 custom-btn" id="btntrans"><span>ヒントだよ
+							Click Me！</span></button></div>
+				<pre
+					class="resi"><p id="btntrans-text" class="hidden"><code class="prettyprint fon linenums ">//オブジェクトの生成は
+クラス名 変数名 = new クラス名(コンストラクタへのパラメーター);
+//という風に記述するよ。
+//生成したオブジェクトのメソッドを呼び出すには
+変数名.メソッド名(引数);という風に呼び出すよ。(引数は必要な場合のみ記述して)
+					</code></p></pre>
+			</div>
+		</div>
+		<div class="switchdsp">
+			<label for="l-1">
+				<span class="clicktxt">解説だよ Click Me!</span>
+			</label>
+			<input type="checkbox" id="l-1">
+			<div class="dsp">
+				<pre style="margin-top: 0px; border: solid 2px darkorchid;" class="resi"><code class="prettyprint fon linenums lang-java">
+A、Employee employee = new Employee ();
+B、System.out.println("社員番号：" + employee.getId());
+C，System.out.println("社員名：" + employee.getName());
+//上記の通りに書いてあるのが正解であるため、b が正解となります。
+
+//a は、new Employee();だけではオブジェクトの生成をおこなうことはできないため、誤りです。
+//c は、非staticなメソッドをstaticメソッドを呼び出す形で呼び出しているため、誤りです。
+//staticメソッドの場合はクラス名.メソッド名で呼び出すことができます。
+			 </code></pre>
+			</div>
+		</div>
+
+
+		<div class="top_wrap">
+			<a href="Array-m2.html"><button class="custom-btn btn-1"><span>次の問題に移動する</span></button></a>
+		</div>
+		<div class="top_wraphome">
+			<a href="../index.html"><button class="custom-btn btn-3"><span>HOME</span></button></a>
+		</div>
+		
+		
+	</div>
+
+	<script src="../js/movemain.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+</body>
+
+</html>

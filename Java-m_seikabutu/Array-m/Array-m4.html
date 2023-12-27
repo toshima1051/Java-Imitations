@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Java Array quest-4</title>
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	<link rel="icon" href="array.png" type="images/x-icon">
+</head>
+
+<body>
+	<div class="frame">
+		<div class="headframe"><a href="../index.html" class="txtdeconon">
+			<div class="plate">
+				<p class="script"><span>Program</span></p>
+				<p class="shadow text1">PRACTICE</p>
+				<p class="shadow text2">Java</p>
+				<p class="shadow text3">quest</p>
+				<p class="script"><span class="pstyle-w">with Array</span></p></a>
+			</div>
+			
+		</div>
+
+		<div class="mondai">
+			<p><span class="pstyle"><strong>問題A-4</strong> 空白に当てはまる選択肢を選んでください。</span></p>
+		</div>
+
+		<div>
+			<pre style="margin-top: 0px;" class="edit-back-ground resi"><code class="prettyprint fon linenums lang-java">package array;
+
+public class Array {
+
+	public static void main(String[] args) {
+		
+		//前の問題で作った配列の値を表示してみよう。(forとwhile)
+		//整数型
+		int[] intArray =  {1,2,3,4,5}; 
+		
+		//文字列型
+		String[] stringArray = {"1","2","3","4","5"}; 
+		
+		/*ここに選択肢のコードが入るよ*/
+		
+	}
+
+}</code></pre>
+		</div>
+		<p><span class="pstyle-1">選択肢:<strong>a</strong></span></p>
+		<div class="fle">
+			<pre style="margin-top: 0px; border: solid 2px skyblue;" class="resi"><code class="prettyprint fon linenums lang-java">
+		//for文
+		for(int i = 0; i &lt; intArray.length; i++) {
+			//整数型
+			System.out.print(intArray[i]);
+			//文字列型
+			System.out.print(stringArray[i]);
+		}
+		
+		//while文
+		int i = 0;
+		while(i &lt; intArray.length) {
+			//整数型
+			System.out.print(intArray[i]);
+			//文字列型
+			System.out.print(stringArray[i]);
+			i++;
+		}
+		</code></pre>
+		</div>
+		<p><span class="pstyle-2">選択肢:<strong>b</strong></span></p>
+		<div>
+			<pre style="margin-top: 0px; border: solid 2px greenyellow;" class="resi"><code class="prettyprint fon linenums lang-java">
+		//for文
+		for(int i = 0; i &gt; intArray.length; i++) {
+			//整数型
+			System.out.print(intArray[i]);
+			//文字列型
+			System.out.print(stringArray[i]);
+		}
+		
+		//while文
+		while(i &gt; intArray.length) {
+			//整数型
+			System.out.print(intArray[i]);
+			//文字列型
+			System.out.print(stringArray[i]);
+			i++;
+		}
+		</code></pre>
+		</div>
+		<p><span class="pstyle-3">選択肢:<strong>c</strong></span></p>
+		<div>
+			<pre style="margin-top: 0px; border: solid 2px orangered;" class="resi"><code class="prettyprint fon linenums lang-java">
+		//for文
+		for(int i = 0; i &lt; intArray.length; i++) {
+			//整数型
+			System.out.print(intArray[i]);
+			//文字列型
+			System.out.print(stringArray[i]);
+		}
+		
+		//while文
+		int i = 0;
+		while(i &lt; intArray.length) {
+			//整数型
+			System.out.print(intArray[i]);
+			//文字列型
+			System.out.print(stringArray[i]);
+		}
+		</code></pre>
+		</div>
+
+		<div>
+			<form>
+				<div class="pulldownset">
+					<select id="cate" class="subbox">
+						<option value="">解答を選択</option>
+						<option value="ha">a</option>
+						<option value="ne">b</option>
+						<option value="ne">c</option>
+					</select>
+
+					<select id="ha" class="subbox2 sb2">
+						<option value="">正誤を確認</option>
+						<option value="ha1" style="color: darkred;">正解</option>
+					</select>
+
+					<select id="ne" class="subbox2 sb3">
+						<option value="">正誤を確認</option>
+						<option value="ha2" style="color:darkblue">不正解</option>
+					</select>
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+				</div>
+				<br>
+
+			</form>
+		</div>
+		<div class="container">
+			<div class="item">
+				<div class="inner_item"><button class="btn-2 custom-btn" id="btntrans"><span>ヒントだよ Click Me！</span></button></div>
+				<pre class="resi"><p id="btntrans-text" class="hidden"><code class="prettyprint fon linenums ">//条件式は
+		//for分の場合 iの初期値 iがintArray.lengthより小さい間くりかえす　iは一ずつ増やすことを最初の文に書く
+		//While分の場合 iがintArray.lengthより小さい間繰り返す事だけを最初の文に書く。 
+		</code></p></pre>
+			</div>
+
+		</div>
+		<div>
+			<div class="switchdsp">
+			<label for="l-1">
+				<span class="clicktxt">解説です Click Me!</span>
+			</label>
+			<input type="checkbox" id="l-1">
+			<div class="dsp">
+				<pre style="margin-top: 0px; border: solid 2px darkorchid;" class="resi"><code class="prettyprint fon linenums lang-java">
+			 サンプル
+			 </code></pre>
+			</div>
+		</div>
+
+			<div class="top_wrap">
+				<a href="Array-m3.html"><button class="custom-btn btn-3"><span>前の問題に移動する</span></button></a>
+				<a href="Array-m5.html"><button class="custom-btn btn-1"><span>次の問題に移動する</span></button></a>
+			</div>
+			<div class="top_wraphome">
+			<a href="../index.html"><button class="custom-btn btn-3"><span>HOME</span></button></a>
+			</div>
+		</div>
+		<script src="../js/movemain.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+</body>
+
+</html>

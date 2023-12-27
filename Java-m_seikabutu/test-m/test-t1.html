@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Test-1</title>
+		<link rel="stylesheet" href="../css/style.css" type="text/css">
+		<link rel="icon" href="../images/test.png" type="images/x-icon">
+		
+	</head>
+	<body>
+
+	<div class="frame">
+		<div class="headframe"><a href="../index.html" class="txtdeconon">
+				<div class="plate">
+					<p class="script"><span>Program</span></p>
+					<p class="shadow text1">PRACTICE</p>
+					<p class="shadow text2">Java</p>
+					<p class="shadow text3">quest</p>
+					<p class="script"><span class="pstyle-E">with Test</span></p>
+			</a>
+		</div>
+	</div>
+
+	<div class="mondai">
+		<p> <span class="pstyle"><span id="question-number">問題T-1</span> 空白に当てはまる選択肢を選んでください。</span></p>
+	</div>
+
+	<div>
+		<pre style="margin-top: 0px;" class="edit-back-ground resi"><code class="prettyprint fon linenums lang-java">package testexam;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class test {
+
+	public static void main(String[] args) {
+		//1~7777777までの７の倍数をすべて書きだしたとき、'7'はいくつありますか？
+		//例：1~77の場合は4です。(7,70,77) = 4
+
+		int number = 7777777;
+		char ch = '7';
+		int sumCount = 0;
+		List<Integer> numList = new ArrayList<Integer>();
+
+		//7の倍数をリストに格納
+		問題A
+
+		//メソッドを呼び出して、個数を計算
+		問題B
+
+		//個数を表示
+		System.out.println(sumCount);
+	}
+
+	//ある文字列に含まれる'7'の個数を計算するメソッド
+	private static int countOccurrences(String strNumber, char ch) {
+		int counter = 0;
+
+		//文字分繰り返す
+		for (int i = 0; i < strNumber.length(); i++) {
+
+			//一致したならカウントする
+			if (strNumber.charAt(i) == ch) {
+				counter++;
+			}
+		}
+		return counter;
+	}
+}</code></pre>
+	</div>
+	<!--選択肢a-->
+	<p><span class="pstyle-1">選択肢:<strong>a</strong></span></p>
+	<div class="fle">
+		<pre style="margin-top: 0px; border: solid 2px skyblue;" class="resi"><code class="prettyprint fon linenums lang-java">
+      //A
+      for (int i = 1; i <= number; i++) {
+	if (i % 7 == 0) {
+		numList[i] = i;
+	}
+}
+		
+      //B
+      for (int i = 0; i < numList.length(); i++) {
+
+	sumCount += countOccurrences(numList[i].toString(), ch);
+}
+        </code></pre>
+	</div>
+	<!--選択肢b-->
+	<p><span class="pstyle-2">選択肢:<strong>b</strong></span></p>
+	<div>
+		<pre style="margin-top: 0px; border: solid 2px greenyellow;" class="resi"><code class="prettyprint fon linenums lang-java">
+      //A
+      for (int i = 1; i <= number; i++) {
+	if (i % 7 == 0) {
+		numList.add(i);
+	}
+}
+		
+      //B
+      for (int i = 0; i < numList.size(); i++) {
+
+	sumCount += countOccurrences(numList.get(i), ch);
+}
+        </code></pre>
+	</div>
+	<!--選択肢c-->
+	<p><span class="pstyle-3">選択肢:<strong>c</strong></span></p>
+	<div>
+		<pre style="margin-top: 0px; border: solid 2px orangered;" class="resi"><code class="prettyprint fon linenums lang-java">
+      //A
+      for (int i = 1; i <= number; i++) {
+	if (i % 7 == 0) {
+		numList.add(i);
+	}
+}
+		
+      //B
+      for (int i = 0; i < numList.size(); i++) {
+
+	sumCount += countOccurrences(numList.get(i).toString(), ch);
+}
+        </code></pre>
+	</div>
+	<!--選択肢d-->
+	<p><span class="pstyle-4">選択肢:<strong>d</strong></span></p>
+	<div>
+		<pre style="margin-top: 0px; border: solid 2px rgb(255, 0, 255);" class="resi"><code class="prettyprint fon linenums lang-java">
+      //A
+      for (int i = 1; i <= number; i++) {
+	if (i % 7 == 0) {
+		numList.add(i);
+	}
+}
+		
+      //B
+      for (int i = 0; i < numList.size(); i++) {
+
+	sumCount = countOccurrences(numList.get(i).toString(), ch);
+}
+        </code></pre>
+	</div>
+
+
+	<div>
+		<!--eventのdecaultの動作をpreventする（防ぐ）-->
+		<!--submitイベントの発生元であるフォームが持つデフォルトの動作をキャンセルするメソッド-->
+		<form id="test-form" onsubmit="event.preventDefault();" style="margin-bottom: 10px;">
+			<p>回答を選択してください</p>
+			<input type="radio" id="noncorrect" name="answer1" value="a">
+			<label for="choice1-1">a</label><br>
+			<input type="radio" id="noncorrect" name="answer1" value="b">
+			<label for="choice1-2">b</label><br>
+			<input type="radio" id="correct" name="answer1" value="c">
+			<label for="choice1-3">c</label><br>
+			<input type="radio" id="noncorrect" name="answer1" value="d">
+			<label for="choice1-4">d</label><br>
+	</div>
+
+	<input type="submit" value="回答" onclick="stop()">
+	</form>
+	<!--回答ボタン押下後正解/不正解が表示-->
+	<p id="message"></p>
+	<span>あくまで目安です</span>
+			<p id="RealtimeClock"></p>
+	
+	<!--解説-->
+	<div id="kaisetu">
+		<h3>解説</h3>
+		<pre style="margin-top: 0px; border: solid 2px darkorchid;" class="resi"><code class="prettyprint fon linenums lang-java">
+//A
+      for (int i = 1; i <= number; i++) {
+	if (i % 7 == 0) {
+		numList.add(i);
+	}
+}
+		
+//B
+      for (int i = 0; i < numList.size(); i++) {
+	  //個数を合計
+	sumCount += countOccurrences(numList.get(i).toString(), ch);
+}
+が正解の形となるので d　が正解となります。
+
+a はリストにもかかわらず配列としての扱い方になっているため間違いです。
+//(numList.get(i)がリストから値を取得するやり方です。)
+
+b はメソッドの引数として渡すときの型が不一致のため間違いです。
+//(String型を渡す必要がありますが、int型を渡してしまっています。キャストする必要があります。)
+
+d はsumCountは合計をしなければならないのに、代入するだけで、値の合計にはなっていません。
+//(sumCount = sumCount + countOccurrences(numList.get(i).toString(), ch);　となる必要がある。)
+			 </code></pre>
+			 
+			 <div class="top_wrap">
+			<a href="../VisualizResult/VisualizResult.html"><button class="custom-btn btn-1"><span>結果の可視化ページへ</span></button></a>
+		</div>
+	</div>
+		<div class="top_wraphome">
+			<a href="../index.html"><button class="custom-btn btn-3"><span>HOME</span></button></a>
+		</div>
+
+	<!-- jsファイルの読み込み　-->
+	<script src="../js/outfile.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+
+	</body>
+
+	</html>

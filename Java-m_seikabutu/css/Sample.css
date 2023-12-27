@@ -1,0 +1,165 @@
+
+#imageList{
+    overflow: scroll;
+}
+#codeList{
+    overflow: scroll;
+}
+/*上わからない*/
+
+
+#imageContainer {
+	display: flex;
+
+}
+
+#imageContainer .imageBlock {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-right: 10px;
+}
+
+#imageContainer img {
+	width: 120px;
+	height: 100px;
+}
+
+.imageBlock p {
+	margin-bottom: 0px;
+}
+
+  #code-container {
+	font-family:"BIZ UDGothic";
+	line-height: 1.2;
+}
+
+select {
+	font-family:"BIZ UDGothic";
+	line-height: 1.2;
+}
+ #codeList {
+	font-size: 20px;
+	font-family:"BIZ UDGothic";
+	line-height: 1.2;
+
+
+}
+
+
+@media (min-width:1001px),print{
+  #code-container {
+	font-size: 20px;
+	/* ここでフォントサイズを調整します */
+
+
+}
+ #codeList {
+	font-size: 20px;
+	/* ここでフォントサイズを調整します */
+
+
+}
+
+select {
+	font-size: 18px;
+	/* ここでフォントサイズを調整します */
+
+}
+}
+
+@media (max-width:1000px) and (min-width:851px),print{
+  #code-container {
+	font-size: 2.0vw;
+	/* ここでフォントサイズを調整します(画面サイズで変化) */
+
+
+}
+ #codeList {
+	font-size: 2.0vw;
+	/* ここでフォントサイズを調整します */
+
+
+}
+select {
+	font-size: 1.5vw;
+	/* ここでフォントサイズを調整します（画面サイズで変化） */
+
+}
+}
+
+@media (max-width:850px) and (min-width:751px){
+  	#code-container {
+		font-size: 17px;
+		/* フォントサイズの下限を設定 */
+	}
+	
+	#codeList {
+		font-size: 17px;
+		/* フォントサイズの下限を設定 */
+	}
+
+	select {
+		font-size: 15px;
+		/* フォントサイズの下限を設定 */
+	}
+  
+}
+@media (max-width:750px){
+  #code-container {
+		font-size: 14px;
+		/* フォントサイズの下限を設定 */
+	}
+		#codeList {
+		font-size: 14px;
+		/* フォントサイズの下限を設定 */
+	}
+
+	select {
+		font-size: 12px;
+		/* フォントサイズの下限を設定 */
+	}
+  
+}
+@media (max-width:600px){
+  #code-container {
+		font-size: 12px;
+		
+		
+		/* フォントサイズの下限を設定 */
+	}
+		#codeList {
+		font-size: 12px;
+		/* フォントサイズの下限を設定 */
+	}
+
+	select {
+		font-size: 10px;
+		
+		/* フォントサイズの下限を設定 */
+	}
+  
+}
+@media (max-width:480px){
+  #code-container {
+		font-size: 9px;
+		line-height: 1.1;
+		
+		/* フォントサイズの下限を設定 */
+	}
+		#codeList {
+		font-size: 9px;
+		line-height: 1.1;
+		/* フォントサイズの下限を設定 */
+	}
+
+	select {
+		font-size: 8px;
+		line-height: 1.1;
+		/* フォントサイズの下限を設定 */
+	}
+  
+}
+
+

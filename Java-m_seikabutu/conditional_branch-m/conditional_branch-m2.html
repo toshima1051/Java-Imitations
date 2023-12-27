@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Java C-branch quest-2</title>
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	<link rel="icon" href="loot.png" type="images/x-icon">
+</head>
+
+<body>
+	<div class="frame">
+		<div class="headframe"><a href="../index.html" class="txtdeconon">
+			<div class="plate">
+				<p class="script"><span>Program</span></p>
+				<p class="shadow text1">PRACTICE</p>
+				<p class="shadow text2">Java</p>
+				<p class="shadow text3">quest</p>
+				<p class="script"><span class="pstyle-c">with<br> Conditional-branch</span></p></a>
+			</div>
+			
+		</div>
+
+		<div class="mondai">
+			<p><span class="pstyle"><strong>問題C-2</strong> 空白に当てはまる選択肢を選んでください。</span></p>
+		</div>
+
+		<div>
+			<pre style="margin-top: 0px;" class="edit-back-ground resi"><code class="prettyprint fon linenums lang-java">package ifdivide;
+
+public class if_m {
+
+	public static void main(String[] args) {
+		// mojiが"ok"だったらtrueと表示させる。
+		//当てはまる条件式を選んで
+		String moji = "ok";
+
+		if() {
+			System.out.println(true);
+		} else {
+			System.out.println(false);
+		}
+	}
+}</code></pre>
+		</div>
+		<p><span class="pstyle-1">選択肢:<strong>a</strong></span></p>
+		<div class="fle">
+			<pre style="margin-top: 0px; border: solid 2px skyblue;" class="resi"><code class="prettyprint fon linenums lang-java">
+		moji.equals("OK")
+		</code></pre>
+		</div>
+		<p><span class="pstyle-2">選択肢:<strong>b</strong></span></p>
+		<div>
+			<pre style="margin-top: 0px; border: solid 2px greenyellow;" class="resi"><code class="prettyprint fon linenums lang-java">
+		moji == "ok"
+		</code></pre>
+		</div>
+		<p><span class="pstyle-3">選択肢:<strong>c</strong></span></p>
+		<div>
+			<pre style="margin-top: 0px; border: solid 2px orangered;" class="resi"><code class="prettyprint fon linenums lang-java">
+		moji.equals("ok")
+		</code></pre>
+		</div>
+
+
+		<div>
+			<form>
+				<div class="pulldownset">
+					<select id="cate" class="subbox">
+						<option value="">解答を選択</option>
+						<option value="ne">a</option>
+						<option value="ne">b</option>
+						<option value="ha">c</option>
+					</select>
+
+					<select id="ha" class="subbox2 sb2">
+						<option value="">正誤を確認</option>
+						<option value="ha1" style="color: darkred;">正解</option>
+					</select>
+
+					<select id="ne" class="subbox2 sb3">
+						<option value="">正誤を確認</option>
+						<option value="ha2" style="color:darkblue">不正解</option>
+					</select>
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+				</div>
+				<br>
+
+
+
+			</form>
+		</div>
+		<div class="container">
+			<div class="item">
+				<div class="inner_item"><button class="btn-2 custom-btn" id="btntrans"><span>ヒントだよ Click Me！</span></button></div>
+				<pre class="resi"><p id="btntrans-text" class="hidden"><code class="prettyprint fon linenums ">//Javaで文字列の比較をおこなう際は、
+// 「==」ではなくて、
+// あるメソッドをを使用するよ。
+				</code></p></pre>
+			</div>
+
+		</div>
+		<div>
+			<div class="switchdsp">
+			<label for="l-1">
+				<span class="clicktxt">解説です Click Me!</span>
+			</label>
+			<input type="checkbox" id="l-1">
+			<div class="dsp">
+				<pre style="margin-top: 0px; border: solid 2px darkorchid;" class="resi"><code class="prettyprint fon linenums lang-java">
+//moji.equals("ok")が正解となるので, cが正解となります
+//a はOKという風に大文字となっているので誤りです。
+//b は「==」を使用しているので誤りです。
+//「==」でも一応結果が返っては来ますが、、
+//等価演算子で期待する結果が返るとは確約できないため，文字列比較はequalsメソッドで統一しておけば安心
+//ということで文字列比較はequalsメソッドを利用する。
+				</code>
+			 </code></pre>
+			</div>
+		</div>
+
+			<div class="top_wrap">
+				<a href="conditional_branch-m1.html"><button class="custom-btn btn-3"><span>前の問題に移動する</span></button></a>
+				<a href="conditional_branch-m3.html"><button class="custom-btn btn-1"><span>次の問題に移動する</span></button></a>
+			</div>
+			<div class="top_wraphome">
+			<a href="../index.html"><button class="custom-btn btn-3"><span>HOME</span></button></a>
+			</div>
+		</div>
+		<script src="../js/movemain.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+</body>
+
+</html>

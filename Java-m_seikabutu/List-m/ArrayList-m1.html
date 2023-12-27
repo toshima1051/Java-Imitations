@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Java List quest-1</title>
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	<link rel="icon" href="list.png" type="images/x-icon">
+</head>
+
+<body>
+	<div class="frame">
+		<div class="headframe"><a href="../index.html" class="txtdeconon">
+				<div class="plate">
+					<p class="script"><span>Program</span></p>
+					<p class="shadow text1">PRACTICE</p>
+					<p class="shadow text2">Java</p>
+					<p class="shadow text3">quest</p>
+					<p class="script"><span class="pstyle-w">with List</span></p></a>
+				</div>
+			
+		</div>
+
+		<div class="mondai">
+			<p><span class="pstyle"><strong>問題L-1</strong> 空白に当てはまる選択肢を選んでください。</span></p>
+		</div>
+
+		<div>
+			<pre style="margin-top: 0px;" class="edit-back-ground resi"><code class="prettyprint fon linenums lang-java">package arrayList_practice;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class ArrayList   {
+
+	public static void main(String[] args) {
+		//次のコードの空白を埋める選択肢を選んでください(A,B)
+		//ArrayListを宣言し、要素をキーボードから入力する。
+		//ArrayListの中の最大の要素を検索する。
+		
+		A、
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int number; //リストの要素数
+		
+		try {
+			
+		System.out.println("ArrayListの要素数を入力：");
+		int n = Integer.parseInt(br.readLine());
+		
+		for (int i = 0; i < n; i++) {
+			System.out.println(i + "番目の要素：");
+			number = Integer.parseInt(br.readLine());
+			arraylist.add(number);
+		}
+		
+		//リストの最大値を求める	
+		//デフォルトとして最初の要素を最大値にする
+		int max = arraylist.get(0);
+		
+		B、
+		
+		
+		System.out.println("リストの最大値=" + max);
+		
+		} catch (IOException e) {
+			System.out.println(e);
+		}
+	}
+}
+</code></pre>
+		</div>
+		<p><span class="pstyle-1">選択肢:<strong>a</strong></span></p>
+		<div class="fle">
+			<pre style="margin-top: 0px; border: solid 2px skyblue;" class="resi"><code class="prettyprint fon linenums lang-java">
+		A、ArrayList<Integer> arraylist = new ArrayList<>();
+		B、for(int i = 0; i < arraylist.size(); i++) {
+			//i番目の要素はmaxより大きければ、maxをi番目の要素に更新する
+			if (arraylist.get(i) > max) {
+				max = arraylist.get(i);
+			}
+		}
+		</code></pre>
+		</div>
+		<p><span class="pstyle-2">選択肢:<strong>b</strong></span></p>
+		<div>
+			<pre style="margin-top: 0px; border: solid 2px greenyellow;" class="resi"><code class="prettyprint fon linenums lang-java">
+		A、ArrayList<Integer> arraylist = new ArrayList<>();
+		B、for(int i = 0; i < arraylist.size(); i++) {
+			//i番目の要素はmaxより大きければ、maxをi番目の要素に更新する
+			if (arraylist[i] > max) {
+				max = arraylist[i];
+			}
+		}
+		</code></pre>
+		</div>
+		<p><span class="pstyle-3">選択肢:<strong>c</strong></span></p>
+		<div>
+			<pre style="margin-top: 0px; border: solid 2px orangered;" class="resi"><code class="prettyprint fon linenums lang-java">
+		A、ArrayList<> arraylist = new ArrayList<>();
+		B、for(int i = 0; i < arraylist.length(); i++) {
+			//i番目の要素はmaxより大きければ、maxをi番目の要素に更新する
+			if (arraylist.get(i) > max) {
+				max = arraylist.get(i);
+			}
+		}
+		</code></pre>
+		</div>
+
+
+		<div>
+			<form id="myform">
+				<div class="pulldownset">
+					<select id="cate" class="subbox">
+						<option value="">解答を選択</option>
+						<option value="ha">a</option>
+						<option value="ne">b</option>
+						<option value="ne">c</option>
+					</select>
+
+					<select id="ha" class="subbox2 sb2">
+						<option value="">正誤を確認</option>
+						<option value="ha1" style="color: darkred;">正解</option>
+					</select>
+
+					<select id="ne" class="subbox2 sb3">
+						<option value="">正誤を確認</option>
+						<option value="ha2" style="color:darkblue">不正解</option>
+					</select>
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+				</div>
+				<br>
+				
+			</form>
+			
+		</div>
+		<div class="container">
+			<div class="item">
+				<div class="inner_item active btn-container"><button class="btn-2 custom-btn" id="btntrans"><span>ヒントだよ
+							Click Me！</span></button></div>
+				<pre
+					class="resi"><p id="btntrans-text" class="hidden"><code class="prettyprint fon linenums ">//ArrayListの宣言
+ArrayList<データ型> 変数名 = new ArrayList<>();   //という風に書くよ。
+//データ型の部分には、ArrayListの格納する要素のデータ型を指定するよ。
+//例えば、文字列の場合はStringを指定するよ。
+ArrayListの要素を取得するにはget()、要素数を取得するにはsize()を使うよ。</code></p></pre>
+			</div>
+		</div>
+		<div class="switchdsp">
+			<label for="l-1">
+				<span class="clicktxt">解説だよ Click Me!</span>
+			</label>
+			<input type="checkbox" id="l-1">
+			<div class="dsp">
+				<pre style="margin-top: 0px; border: solid 2px darkorchid;" class="resi"><code class="prettyprint fon linenums lang-java">
+		//解答例
+		A、ArrayList<Integer> arraylist = new ArrayList<>();
+		B、for(int i = 0; i < arraylist.size(); i++) {
+			//i番目の要素はmaxより大きければ、maxをi番目の要素に更新する
+			if (arraylist.get(i) > max) {
+				max = arraylist.get(i);
+			}
+		}
+		//したがってa が正解となります。
+		//b は、arraylist[i]と書いているので誤りです。これは配列の要素を表します。正しくは、arraylist.get(i);です
+		//c は、arraylist.lengthと書いているので誤りです。これは配列の要素数を表すときに使います。正しくはarraylist.size()です。
+			 </code></pre>
+			</div>
+		</div>
+
+
+		<div class="top_wrap">
+			<a href="Array-m2.html"><button class="custom-btn btn-1"><span>次の問題に移動する</span></button></a>
+		</div>
+		<div class="top_wraphome">
+			<a href="../index.html"><button class="custom-btn btn-3"><span>HOME</span></button></a>
+		</div>
+		
+		
+	</div>
+
+	<script src="../js/movemain.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+</body>
+
+</html>
